@@ -44,31 +44,17 @@ public class Driver {
 
             if(choice == 1){
                 //create warrior
-                Random random =  new Random();
-                player.setHealth(random.nextInt(5) + 15);
-                player.setStrength(random.nextInt(10) + 15);
-                player.setIntelligence(random.nextInt(5) + 5);
-                player.setEvade(random.nextInt(5) +5);
-
+                createWarrior(player);
                 break;
             }
             else if(choice == 2){
                 //create mage
-                Random random =  new Random();
-                player.setHealth(random.nextInt(5) + 10);
-                player.setStrength(random.nextInt(5) + 5);
-                player.setIntelligence(random.nextInt(10) + 20);
-                player.setEvade(random.nextInt(5) + 5);
-
+                createMage(player);
                 break;
             }
             else if(choice == 3){
                 //create thief
-                Random random = new Random();
-                player.setHealth(random.nextInt(5) + 10);
-                player.setStrength(random.nextInt(5));
-                player.setIntelligence(random.nextInt(5) + 5);
-                player.setEvade(random.nextInt(10) + 15);
+                createThief(player);
                 break;
             }
             else {
@@ -156,6 +142,34 @@ public class Driver {
         }
 
     }
+
+    //create player as a warrior
+    public static void createWarrior(Player player){
+        Random random =  new Random();
+        player.setHealth(random.nextInt(5) + 15);
+        player.setStrength(random.nextInt(10) + 15);
+        player.setIntelligence(random.nextInt(5) + 5);
+        player.setEvade(random.nextInt(5) +5);
+    }
+
+    //create player as a mage
+    public static void createMage(Player player){
+        Random random =  new Random();
+        player.setHealth(random.nextInt(5) + 10);
+        player.setStrength(random.nextInt(5) + 5);
+        player.setIntelligence(random.nextInt(10) + 20);
+        player.setEvade(random.nextInt(5) + 5);
+    }
+
+    //create player as a thief
+    public static void createThief(Player player){
+        Random random = new Random();
+        player.setHealth(random.nextInt(5) + 10);
+        player.setStrength(random.nextInt(5));
+        player.setIntelligence(random.nextInt(5) + 5);
+        player.setEvade(random.nextInt(10) + 15);
+    }
+
 
 
 
