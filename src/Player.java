@@ -11,36 +11,28 @@
  * Player class
  */
 import java.util.*;
-public class Player {
+public class Player extends Character{
 
-    //Player attributes
-    private int health;
-    private int strength;
+    //Player attributes (unique from Character)
     private int intelligence;
     private int evade;
 
-
-
-
     //Constructor
     public Player() {
-        this.health = -1;
-        this.strength = -1;
+        super();
         this.intelligence = -1;
         this.evade = -1;
 
     }
 
     //Set functions for player attributes
-    public void setHealth(int health){ this.health = health; }
-    public void setStrength(int strength){ this.strength = strength; }
+
     public void setIntelligence(int intelligence){ this.intelligence = intelligence; }
     public void setEvade(int evade){this.evade =evade;}
 
 
     //Get functions for player attributes
-    public int getHealth(){ return this.health; }
-    public int getStrength(){ return this.strength ;}
+
     public int getIntelligence(){ return this.intelligence; }
     public int getEvade(){return this.evade;}
 
@@ -74,8 +66,8 @@ public class Player {
 
     public void displayAttributes(){
         System.out.println( "\nPlayer \n"    +
-                "HP : " + this.health + "\n" +
-                "STR: " + this.strength + "\n" +
+                "HP : " + this.getHealth() + "\n" +
+                "STR: " + this.getStrength() + "\n" +
                 "INT: " + this.intelligence + "\n" +
                 "EVD: " + this.evade);
 

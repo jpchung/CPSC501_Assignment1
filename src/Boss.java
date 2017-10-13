@@ -10,45 +10,33 @@
  *
  * Boss class
  */
-public class Boss {
+public class Boss extends Character{
 
-    //boss attributes
-    private int health;
-    private int strength;
+    //boss attributes (unique from Character)
     private int accuracy;
-
 
     //Constructor
     public Boss(){
-        this.health = -1;
-        this.strength = -1;
+        super();
         float accuracy = 0;
     }
 
     //constructor scaling with player
     public Boss(Player player) {
-        this.health = player.getHealth() * 20;
-        this.strength =  player.getStrength() * 2;
+        this.setHealth( player.getHealth() * 20);
+        this.setStrength(player.getStrength() * 2);
         this.accuracy = 100 - 2*(player.getEvade());
 
     }
 
-    //set functions for Boss attributes
-    public void setHealth(int health){ this.health = health; }
-
-
-
-
     //get functions for Boss attributes
-    public int getHealth(){ return this.health; }
-    public int getStrength(){ return this.strength ;}
     public int getAccuracy(){ return this.accuracy; }
 
 
     public void displayAttributes(){
         System.out.println( "\nBoss \n"    +
-                "HP : " + this.health + "\n" +
-                "STR: " + this.strength);
+                "HP : " + this.getHealth() + "\n" +
+                "STR: " + this.getStrength());
     }
 
 }
