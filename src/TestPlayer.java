@@ -12,6 +12,12 @@ public class TestPlayer {
     @Test
     public void testConstructor(){
         assertNotNull(new Player());
+        Player player = new Player();
+        assertEquals(-1, player.getHealth());
+        assertEquals(-1, player.getStrength());
+        assertEquals(-1, player.getIntelligence());
+        assertEquals(-1, player.getEvade());
+
     }
 
     @Test
@@ -47,4 +53,6 @@ public class TestPlayer {
         assertTrue(player.getIntelligence() >= 5);
         assertTrue(player.getEvade() >= 15);
     }
+
+
 }

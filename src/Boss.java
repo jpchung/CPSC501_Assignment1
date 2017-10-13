@@ -19,7 +19,7 @@ public class Boss extends Character{
     //Constructor
     public Boss(){
         super();
-        float accuracy = 0;
+        this.accuracy = -1;
     }
 
     //constructor scaling with player

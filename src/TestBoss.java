@@ -12,6 +12,10 @@ public class TestBoss {
     @Test
     public void testConstructor(){
         assertNotNull(new Boss());
+        Boss boss = new Boss();
+        assertEquals(-1, boss.getHealth());
+        assertEquals(-1, boss.getStrength());
+        assertEquals(-1, boss.getAccuracy());
     }
 
     @Test
@@ -25,6 +29,7 @@ public class TestBoss {
         assertEquals(boss.getHealth(),(player.getHealth()*20));
         assertEquals(boss.getStrength(), (player.getStrength() * 2));
         assertTrue(boss.getAccuracy() < 100);
+        assertNotEquals(-1, boss.getAccuracy());
     }
 
     @Test

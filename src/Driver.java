@@ -30,7 +30,6 @@ public class Driver {
 
         player.displayAttributes();
 
-
         //spawn boss
         System.out.println("\nSpawning boss! Get Ready!");
         boss = new Boss(player);
@@ -54,20 +53,14 @@ public class Driver {
             }
             choice =  input.nextInt();
 
-            Random random = new Random();
-            int chanceToHit = random.nextInt(100);
-
-
             if(choice == 1) {
                 System.out.printf("\nYou did %d damage!\n", player.getStrength());
                 boss.setHealth(boss.getHealth() - player.getStrength());
-
                 boss.bossAttack(player);
             }
             else if(choice == 2) {
                 System.out.printf("\nYou did %d damage!\n", player.getIntelligence());
                 boss.setHealth(boss.getHealth() - player.getIntelligence());
-
                 boss.bossAttack(player);
             }
             else if(choice == 3) {
@@ -137,8 +130,6 @@ public class Driver {
             }
         }
     }
-
-
 
 
 
