@@ -26,42 +26,7 @@ public class Driver {
         System.out.println("Welcome to the game!");
         Scanner input = new Scanner(System.in);
 
-        while(true){
-
-            System.out.println( "1| Select Warrior Class\n" +
-                    "2| Select Mage Class\n" +
-                    "3| Select Thief Class" );
-
-            System.out.print("Enter a choice: ");
-
-            //check if integer input
-            while(!input.hasNextInt()){
-                input.next();
-                System.out.print("Enter a valid integer: ");
-            }
-
-            choice = input.nextInt();
-
-            if(choice == 1){
-                //create warrior
-                player.createWarrior();
-                break;
-            }
-            else if(choice == 2){
-                //create mage
-                player.createMage();
-                break;
-            }
-            else if(choice == 3){
-                //create thief
-                player.createThief();
-                break;
-            }
-            else {
-                System.out.println("Out of range");
-            }
-        }
-
+        askUser(input, choice, player);
 
         player.displayAttributes();
 
@@ -140,6 +105,46 @@ public class Driver {
         }
         else {
             System.out.println("The boss missed its counterattack!\n");
+        }
+    }
+
+    //ask user for class selection
+    private static void askUser(Scanner input, int choice, Player player){
+
+        while(true){
+
+            System.out.println( "1| Select Warrior Class\n" +
+                    "2| Select Mage Class\n" +
+                    "3| Select Thief Class" );
+
+            System.out.print("Enter a choice: ");
+
+            //check if integer input
+            while(!input.hasNextInt()){
+                input.next();
+                System.out.print("Enter a valid integer: ");
+            }
+
+            choice = input.nextInt();
+
+            if(choice == 1){
+                //create warrior
+                player.createWarrior();
+                break;
+            }
+            else if(choice == 2){
+                //create mage
+                player.createMage();
+                break;
+            }
+            else if(choice == 3){
+                //create thief
+                player.createThief();
+                break;
+            }
+            else {
+                System.out.println("Out of range");
+            }
         }
     }
 
