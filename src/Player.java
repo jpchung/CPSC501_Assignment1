@@ -45,6 +45,32 @@ public class Player {
     public int getEvade(){return this.evade;}
 
 
+    //generate Warrior stats for player attributes
+    public void createWarrior(){
+         Random random =  new Random();
+         this.setHealth(random.nextInt(5) + 15);
+         this.setStrength(random.nextInt(10) + 15);
+         this.setIntelligence(random.nextInt(5) + 5);
+         this.setEvade(random.nextInt(5) +5);
+    }
+
+    //generate Mage stats for player attributes
+    public void createMage(){
+        Random random =  new Random();
+        this.setHealth(random.nextInt(5) + 10);
+        this.setStrength(random.nextInt(5) + 5);
+        this.setIntelligence(random.nextInt(10) + 20);
+        this.setEvade(random.nextInt(5) + 5);
+    }
+
+    //generate Thief stats for player attributes
+    public void createThief(){
+        Random random = new Random();
+        this.setHealth(random.nextInt(5) + 10);
+        this.setStrength(random.nextInt(5) + 5);
+        this.setIntelligence(random.nextInt(5) + 5);
+        this.setEvade(random.nextInt(10) + 15);
+    }
 
     public void displayAttributes(){
         System.out.println( "\nPlayer \n"    +
