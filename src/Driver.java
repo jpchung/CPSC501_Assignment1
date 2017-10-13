@@ -62,13 +62,13 @@ public class Driver {
                 System.out.printf("\nYou did %d damage!\n", player.getStrength());
                 boss.setHealth(boss.getHealth() - player.getStrength());
 
-                bossAttack(chanceToHit, boss, player);
+                boss.bossAttack(player);
             }
             else if(choice == 2) {
                 System.out.printf("\nYou did %d damage!\n", player.getIntelligence());
                 boss.setHealth(boss.getHealth() - player.getIntelligence());
 
-                bossAttack(chanceToHit, boss, player);
+                boss.bossAttack(player);
             }
             else if(choice == 3) {
                 System.out.println("quitting game...");
@@ -95,17 +95,6 @@ public class Driver {
             System.out.printf("You won the game in %d turns!", turn);
         }
 
-    }
-
-    //game logic for boss counterattack
-    private static void bossAttack(int chanceToHit, Boss boss, Player player){
-        if(chanceToHit < boss.getAccuracy()) {
-            System.out.printf("The boss retaliates and does %d damage!\n", boss.getStrength());
-            player.setHealth(player.getHealth() - boss.getStrength());
-        }
-        else {
-            System.out.println("The boss missed its counterattack!\n");
-        }
     }
 
 

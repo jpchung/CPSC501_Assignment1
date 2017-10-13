@@ -10,6 +10,7 @@
  *
  * Boss class
  */
+import java.util.*;
 public class Boss extends Character{
 
     //boss attributes (unique from Character)
@@ -37,6 +38,19 @@ public class Boss extends Character{
         System.out.println( "\nBoss \n"    +
                 "HP : " + this.getHealth() + "\n" +
                 "STR: " + this.getStrength());
+    }
+
+    public void bossAttack(Player player){
+        Random random = new Random();
+        int chanceToHit = random.nextInt(100);;
+        if(chanceToHit < this.getAccuracy()) {
+            System.out.printf("The boss retaliates and does %d damage!\n", this.getStrength());
+            player.setHealth(player.getHealth() - this.getStrength());
+        }
+        else {
+            System.out.println("The boss missed its counterattack!\n");
+        }
+
     }
 
 }
