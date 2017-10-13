@@ -26,7 +26,7 @@ public class Driver {
         System.out.println("Welcome to the game!");
         Scanner input = new Scanner(System.in);
 
-        askUser(input, choice, player);
+        promptClassSelection(input, choice, player);
 
         player.displayAttributes();
 
@@ -108,8 +108,9 @@ public class Driver {
         }
     }
 
+
     //ask user for class selection
-    private static void askUser(Scanner input, int choice, Player player){
+    private static void promptClassSelection(Scanner input, int choice, Player player){
 
         while(true){
 
