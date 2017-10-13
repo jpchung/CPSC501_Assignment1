@@ -35,7 +35,7 @@ public class Boss {
 
     //set functions for Boss attributes
     public void setHealth(int health){ this.health = health; }
-    public void setStrength(int strength){ this.strength = strength; }
+
 
 
 
